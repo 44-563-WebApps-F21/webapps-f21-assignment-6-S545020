@@ -5,7 +5,7 @@
 
 <h2>Radha computes</h2>
 
-<form>
+<form >
     <label for="base_element">Enter a base</label>
     <input type ="number" id="base" name="base_element"  value=10> <br>
 <br>
@@ -13,10 +13,25 @@
     <input type ="number" id="exponent" name="exponent_element" autofocus> <br>
 <br>
     <input type="button" onclick="powers()" value="Compute">
+    
 </form>
+<p id="output">The result will be replaced </p>
+<br>
+<form>   
+<input type="radio" id="plus" name ="operation" onclick="processRadio()" value="plus" checked >
+  <label for ="plus">+</label></br>
+
+  <input type="radio" id="minus" name ="operation" onclick="processRadio()" value="minus">
+  <label for="plus">-</label></br>
+
+  <input type="radio" id="times"  name ="operation" onclick="processRadio()" value="times">
+  <label for="plus">*</label></br>  
+  <input type="radio" id="divide" name ="operation" onclick="processRadio()"value="divide">
+  <label for="plus">/</label></br>  
+</form>
+<p id="radio_opeartion">After operation result will be displayed</p>
 
 
-<p id="output">This text will be replaced </p>
 
 <script> 
 
@@ -32,8 +47,42 @@ function powers(){
         result=result+" ";
     }
 
-        out.innerHTML = "Powers of "+ number1 + " are : "+ result
+        out.innerHTML = "Powers of "+" "+ number1 + " are : "+ result
 
+}
+function processRadio(){
+    console.log("Getting form values")
+    number1 = document.getElementById("base").value
+    number2 = document.getElementById("exponent").value
+    var res ;
+    plus = document.getElementById("plus").checked;
+    minus = document.getElementById("minus").checked;
+    times = document.getElementById("times").checked;
+    divide = document.getElementById("divide").checked;
+    if(plus)
+    {
+      res=0;
+      res=(Number)(number1) + (Number)(number2);
+      document.getElementById("radio_opeartion").innerHTML= "Sum of" + " " +number1 +" and" + " "+ number2 +" is: " +res;
+    }
+    if(minus)
+    {
+      res=0;
+      res=number1  - number2;
+      document.getElementById("radio_opeartion").innerHTML="Subtraction of" + " " +number1 +" and" + " "+ number2 +" is: " +res;
+    }
+    if(times)
+    {
+      res=0;
+      res=number1 * number2;
+      document.getElementById("radio_opeartion").innerHTML="Multiplication of" + " " +number1 +" and" + " "+ number2 +" is: " +res;
+    }
+    if(divide)
+    {
+      res=0;
+      res=number1 / number2;
+      document.getElementById("radio_opeartion").innerHTML="Division of" + " " +number1 +" and" + " "+ number2 +" is: " +res;
+}
 }
     
 </script>
