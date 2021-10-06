@@ -19,8 +19,21 @@
     
 </form>
 
-<p id="result">This text will be replaced </p>
 
+<p id="result">This text will be replaced with checked values</p>
+<form>
+    <label>Enter a property </label>
+    <input type ="text" id="name" name="property" value="color">
+    <br>
+    <br>
+    <label>Enter a value </label>
+    <input type ="text" id="value" name="property">
+    <br>
+    <br>
+    <input type="button" onclick="updateCar()" value="Update the car">
+   
+</form>
+<p id="output">This text will be replaced with updated car </p>
 <script> 
 
 
@@ -38,6 +51,14 @@ function orderCar()
     out = document.getElementById("result")
     out.innerHTML  = "The values of electric card and ac car and gps car are: " + electric_car + " " + ac_car +" "+ gps_car;    
     
+}
+function updateCar(){
+    str1 = document.getElementById("name").value
+    str2 = document.getElementById("value").value
+    my_car= str1 + " "+ str2;
+    out = document.getElementById("output")
+    out.innerHTML  = " The values of updated car are: " + my_car;
+
 }
 </script>
 
