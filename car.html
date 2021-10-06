@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head><title>This pages is used for checkboxed using javascript</title></head> 
-<body>
+<head><title>This pages is used for checkboxed using javascript</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script></head> 
+<body style="padding-right: 30px; padding-left: 30px;">
 
-<h2>Radha Nayakanti orders a car</h2>
+<h2 style="color: deeppink; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Radha Nayakanti orders a car</h2>
 
-<form>
-    <input type ="checkbox" id="electric" name="electric_car" value="electric">
+<form class="form-inline" action="/action_page.php">
+    <div class="form-group">
+    <input type ="checkbox" id="electric" name="electric_car"  class="form-control"value="electric">
     <label for="electric">electric </label>
+</div>
 <br>
-<input type ="checkbox" id="ac" name="ac_car" value="ac">
-    <label for="ac">ac </label><br>
-    <input type ="checkbox" id="gps" name="gps_car" value="gps">
-    <label for="gps">gps </label><br>
+<div class="form-group">
+<input type ="checkbox" id="ac" class="form-control" name="ac_car" value="ac">
+    <label for="ac">ac </label></div><br>
+    <div class="form-group">
+    <input type ="checkbox" id="gps" class="form-control" name="gps_car" value="gps">
+    <label for="gps">gps </label></div><br>
     <br>
-    <input type="button" onclick="orderCar()" value="Order a car">
- 
-    
+    <input  type="button" class="btn btn-primary" onclick="orderCar()"  value="Order a car">
 </form>
-
-
-<p id="result">This text will be replaced with checked values</p>
-<form>
+<br>
+<p style="font-style: italic; color:seagreen" id="result">This text will be replaced with checked values</p>
+<br>
+<form class="form-inline" action="/action_page.php">
+    <div class="form-group">
     <label>Enter a property </label>
-    <input type ="text" id="name" name="property" value="color">
+    <input type ="text" id="name" name="property" class="form-control" value="color"></div>
     <br>
     <br>
+    <div class="form-group">
     <label>Enter a value </label>
-    <input type ="text" id="value" name="property">
+    <input type ="text" id="value" class="form-control"name="property" placeholder="Enter a value"></div>
     <br>
     <br>
-    <input type="button" onclick="updateCar()" value="Update the car">
+    <input type="button" class="btn btn-primary" onclick="updateCar()" value="Update the car">
    
 </form>
-<p id="output">This text will be replaced with updated car </p>
+<br>
+<p style="font-style: italic; color:seagreen" id="output">This text will be replaced with updated car </p>
 <script> 
 
 

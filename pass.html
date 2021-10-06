@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html>
- <head><title>This is sample web page using javascript</title></head>
-<body>
+ <head><title>This is sample web page using javascript</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script></head>
 
-<h2>Pass phraseby Radha Nayakanti</h2>
+<body style="padding-right: 30px; padding-left: 30px;" >
 
-<form>
+<h2 style="color: deeppink; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Pass phraseby Radha Nayakanti</h2>
+
+<form class="form-inline" action="/action_page.php">
+    <div class="form-group">
     <label for="pass">Enter the secret phrase</label>
-    <input type ="password" id="pass" name="password"  value="Let me in"> <br>
+    
+    <input type ="password" id="pass" class="form-control" name="password"  value="Let me in">
+</div>
 <br>
+<br>
+    <div class="form-group">
     <label for="pwd">Enter a phrase </label>
-    <input type ="text" id="check"  autofocus> <br>
+    <input type ="text" id="check"  class="form-control"autofocus></div>
 <br>
-    <input type="button" onclick="processPhrase()" value="Check the phrase">
+<br>
+    <input id="locked" class="btn btn-primary" type="button" onclick="processPhrase()"  value="Check the phrase"></div>
 </form>
-
-
-<p id="result">This text will be replaced </p>
-<div class="container">
+<br>
+<p  style="font-style: italic; color:seagreen"id ="result">This text will be replaced with Count of login </p>
+<div class="container" style="margin-left: 0px;">
     <img id ="image" src="Ape.jpg" alt="Ape Image"  onclick="newImage()">
+    
 </div>
 <script>
 
@@ -38,7 +50,12 @@ function processPhrase(){
        wrong = wrong+1;
        alert("Access denied")
        out.innerHTML = "Wrong Count : "+wrong
+       if(wrong==3)
+   {
+    document.getElementById("locked").onclick = test();
    }
+   }
+   
 }
    let usingImage=1;
     function newImage(){
@@ -46,11 +63,11 @@ function processPhrase(){
 switch(usingImage){
     case 1:
     document.getElementById("image").src = "Ape.jpg";
-    usingImage=2;
+    usingImage=usingImage+1;
     break;
     case 2:
     document.getElementById("image").src="Amur.jpg";
-    usingImage=3;
+    usingImage=usingImage+2;
     break;
     case 3:
     document.getElementById("image").src ="Kangaroo.jpg";
@@ -62,7 +79,12 @@ switch(usingImage){
 
 }
  }
-
+function test(){
+   
+    out = document.getElementById("result")
+    alert("Account locked")
+    out.innerHTML = "Wrong Count : "+wrong
+}
 </script>
 
 </body>

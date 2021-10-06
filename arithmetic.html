@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html>
- <head><title>This page is used for loop computation</title></head>
-<body>
+ <head><title>This page is used for loop computation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script></head>
+<body style="padding-right: 30px; padding-left: 30px;">
 
-<h2>Radha computes</h2>
+<h2 style="color:deeppink; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Radha computes</h2>
 
-<form >
+<form  class="form-inline" action="/action_page.php">
+    <div class="form-group">
     <label for="base_element">Enter a base</label>
-    <input type ="number" id="base" name="base_element"  value=10> <br>
+    <input type ="number" id="base" name="base_element" class="form-control" value=10> </div><br>
 <br>
+<div class="form-group">
     <label for="exponent_element">Enter an exponent</label>
-    <input type ="number" id="exponent" name="exponent_element" autofocus> <br>
+    <input type ="number" id="exponent" class="form-control" name="exponent_element" autofocus></div> <br>
 <br>
-    <input type="button" onclick="powers()" value="Compute">
+    <input type="button" class="btn btn-primary" onclick="powers()" value="Compute">
     
 </form>
-<p id="output">The result will be replaced </p>
 <br>
-<form>   
-<input type="radio" id="plus" name ="operation" onclick="processRadio()" value="plus" checked >
-  <label for ="plus">+</label></br>
-
-  <input type="radio" id="minus" name ="operation" onclick="processRadio()" value="minus">
-  <label for="plus">-</label></br>
-
-  <input type="radio" id="times"  name ="operation" onclick="processRadio()" value="times">
-  <label for="plus">*</label></br>  
-  <input type="radio" id="divide" name ="operation" onclick="processRadio()"value="divide">
+<p id="output" style="font-style: italic; color:seagreen">The result will be replaced with result</p>
+<br>
+<form class="form-inline" action="/action_page.php">   
+    <div class="form-group">
+<input type="radio" id="plus" class="form-control" name ="operation" onclick="processRadio()" value="plus" checked >
+  <label for ="plus">+</label> </div></br>
+  <div class="form-group">
+  <input type="radio" id="minus"  class="form-control"name ="operation" onclick="processRadio()" value="minus">
+  <label for="plus">-</label></div></br>
+  <div class="form-group">
+  <input type="radio" id="times"  name ="operation" class="form-control" onclick="processRadio()" value="times">
+  <label for="plus">*</label></div></br>  
+  <div class="form-group">
+  <input type="radio" id="divide" name ="operation" class="form-control" onclick="processRadio()"value="divide">
   <label for="plus">/</label></br>  
 </form>
-<p id="radio_opeartion">After operation result will be displayed</p>
+<p style="font-style: italic; color:seagreen" id="radio_opeartion">After operation result will be displayed</p>
 
 
 
