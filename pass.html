@@ -17,12 +17,16 @@
 
 
 <p id="result">This text will be replaced </p>
+<div class="container">
+    <img id ="image" src="Ape.jpg" alt="Ape Image"  onclick="newImage()">
+</div>
+<script>
 
-<script> 
  let correct=0,wrong=0;
 function processPhrase(){
    var secret = document.getElementById("pass").value
    var check = document.getElementById("check").value
+   result.style.color = "red"
    out = document.getElementById("result")
    if(secret == check)
    {
@@ -35,16 +39,31 @@ function processPhrase(){
        alert("Access denied")
        out.innerHTML = "Wrong Count : "+wrong
    }
-  
-//    if(correct!=0)
-//    {
-//      out.innerHTML = "Correct Count : "+correct
-//    }
-//    else
-//    out.innerHTML = "Wrong Count : "+wrong
+}
+   let usingImage=1;
+    function newImage(){
 
+switch(usingImage){
+    case 1:
+    document.getElementById("image").src = "Ape.jpg";
+    usingImage=2;
+    break;
+    case 2:
+    document.getElementById("image").src="Amur.jpg";
+    usingImage=3;
+    break;
+    case 3:
+    document.getElementById("image").src ="Kangaroo.jpg";
+    usingImage=1;
+    break;
+    default:
+    document.getElementById("image").src ="Amur.jpg";   
+    usingImage=1;
+
+}
  }
+
 </script>
 
 </body>
-</html> 
+</html>
