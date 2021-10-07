@@ -33,7 +33,7 @@
     
 </div>
 <script>
-
+let errorFlag = 1;
  let correct=0,wrong=0;
 function processPhrase(){
    var secret = document.getElementById("pass").value
@@ -45,15 +45,23 @@ function processPhrase(){
        correct = correct+1;
        alert("Access Allowed")
        out.innerHTML = "Correct Count : "+correct
+       errorFlag=0;
    }
    else{
        wrong = wrong+1;
        alert("Access Denied")
        out.innerHTML = "Wrong Count : "+wrong
-       if(wrong==3)
-   {
-    document.getElementById("locked").onclick = test();
+       errorFlag++;
+       
    }
+   if(wrong >= 3 && errorFlag>2) 
+   {
+    document.getElementById("locked").onclick =function()
+
+    {
+        alert("Account locked")
+    }
+
    }
    
 }
@@ -79,12 +87,12 @@ switch(usingImage){
 
 }
  }
-function test(){
+// function test(){
    
-    out = document.getElementById("result")
-    alert("Account locked")
-    out.innerHTML = "Wrong Count : "+wrong
-}
+//     out = document.getElementById("result")
+//     alert("Account locked")
+//     out.innerHTML = "Wrong Count : "+wrong
+// }
 </script>
 
 </body>
